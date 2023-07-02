@@ -33,8 +33,83 @@
             <option value="other">{{localize "ExEss.Other"}}</option>
             {{/select}}
           </select></h1>
-        <h1 class="charname"><input name="system.details.caste" type="text" value="{{system.details.caste}}"
-            placeholder="{{localize 'ExEss.CasteAspect'}}" /></h1>
+        <h1 class="charname">
+          {{#ifEquals system.details.exalt 'exigent'}}
+          <input name="system.details.caste" type="text" value="{{system.details.caste}}"
+            placeholder="{{localize 'ExEss.CasteAspect'}}" />
+          {{/ifEquals}}
+          {{#ifEquals system.details.exalt 'other'}}
+          <input name="system.details.caste" type="text" value="{{system.details.caste}}"
+            placeholder="{{localize 'ExEss.CasteAspect'}}" />
+          {{/ifEquals}}
+          {{#ifNotEquals system.details.exalt 'exigent'}}
+            <select name="system.details.caste" data-type="String">
+            {{#select system.details.caste}}
+              {{#ifEquals system.details.exalt 'abyssal'}}
+                <option value="dusk">{{localize "ExEss.Dusk"}}</option>
+                <option value="midnight">{{localize "ExEss.Midnight"}}</option>
+                <option value="daybreak">{{localize "ExEss.Daybreak"}}</option>
+                <option value="day">{{localize "ExEss.Day"}}</option>
+                <option value="moonshadow">{{localize "ExEss.Moonshadow"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'alchemical'}}
+                <option value="adament">{{localize "ExEss.Adament"}}</option>
+                <option value="jade">{{localize "ExEss.Jade"}}</option>
+                <option value="moonsilver">{{localize "ExEss.Moonsilver"}}</option>
+                <option value="orichalcum">{{localize "ExEss.Orichalcum"}}</option>
+                <option value="soulsteel">{{localize "ExEss.Soulsteel"}}</option>
+                <option value="starmetal">{{localize "ExEss.Starmetal"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'dragonblooded'}}
+                <option value="air">{{localize "ExEss.Air"}}</option>
+                <option value="earth">{{localize "ExEss.Earth"}}</option>
+                <option value="fire">{{localize "ExEss.Fire"}}</option>
+                <option value="water">{{localize "ExEss.Water"}}</option>
+                <option value="wood">{{localize "ExEss.Wood"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'getimian'}}
+                <option value="spring">{{localize "ExEss.Spring"}}</option>
+                <option value="summer">{{localize "ExEss.Summer"}}</option>
+                <option value="autumn">{{localize "ExEss.Autumn"}}</option>
+                <option value="winter">{{localize "ExEss.Winter"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'infernal'}}
+                <option value="azimuth">{{localize "ExEss.Azimuth"}}</option>
+                <option value="ascendant">{{localize "ExEss.Ascendant"}}</option>
+                <option value="horizon">{{localize "ExEss.Horizon"}}</option>
+                <option value="nadir">{{localize "ExEss.Nadir"}}</option>
+                <option value="penumbra">{{localize "ExEss.Penumbra"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'liminal'}}
+                <option value="blood">{{localize "ExEss.Blood"}}</option>
+                <option value="breath">{{localize "ExEss.Breath"}}</option>
+                <option value="flesh">{{localize "ExEss.Flesh"}}</option>
+                <option value="marrow">{{localize "ExEss.Marrow"}}</option>
+                <option value="soil">{{localize "ExEss.Soil"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'lunar'}}
+                <option value="fullMoon">{{localize "ExEss.FullMoon"}}</option>
+                <option value="changingMoon">{{localize "ExEss.ChangingMoon"}}</option>
+                <option value="noMoon">{{localize "ExEss.NoMoon"}}</option>
+                <option value="casteless">{{localize "ExEss.Casteless"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'sidereal'}}
+                <option value="journeys">{{localize "ExEss.ChosenJourneys"}}</option>
+                <option value="serenity">{{localize "ExEss.ChosenSerenity"}}</option>
+                <option value="battles">{{localize "ExEss.ChosenBattles"}}</option>
+                <option value="secrets">{{localize "ExEss.ChosenSecrets"}}</option>
+                <option value="endings">{{localize "ExEss.ChosenEndings"}}</option>
+              {{/ifEquals}}
+              {{#ifEquals system.details.exalt 'solar'}}
+                <option value="dawn">{{localize "ExEss.Dawn"}}</option>
+                <option value="zenith">{{localize "ExEss.Zenith"}}</option>
+                <option value="twilight">{{localize "ExEss.Twilight"}}</option>
+                <option value="night">{{localize "ExEss.Night"}}</option>
+                <option value="eclipse">{{localize "ExEss.Eclipse"}}</option>
+              {{/ifEquals}}
+            {{/ifNotEquals}}
+          {{/select}}
+          </select></h1>
       </div>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
