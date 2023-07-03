@@ -34,15 +34,6 @@
             {{/select}}
           </select></h1>
         <h1 class="charname">
-          {{#ifEquals system.details.exalt 'exigent'}}
-          <input name="system.details.caste" type="text" value="{{system.details.caste}}"
-            placeholder="{{localize 'ExEss.CasteAspect'}}" />
-          {{/ifEquals}}
-          {{#ifEquals system.details.exalt 'other'}}
-          <input name="system.details.caste" type="text" value="{{system.details.caste}}"
-            placeholder="{{localize 'ExEss.CasteAspect'}}" />
-          {{/ifEquals}}
-          {{#ifNotEquals system.details.exalt 'exigent'}}
             <select name="system.details.caste" data-type="String">
             {{#select system.details.caste}}
               {{#ifEquals system.details.exalt 'abyssal'}}
@@ -107,7 +98,6 @@
                 <option value="night">{{localize "ExEss.Night"}}</option>
                 <option value="eclipse">{{localize "ExEss.Eclipse"}}</option>
               {{/ifEquals}}
-            {{/ifNotEquals}}
           {{/select}}
           </select></h1>
       </div>
